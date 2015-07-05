@@ -9,6 +9,11 @@ var express = require('express'),
 var app = express()
 var port = process.env.PORT || 3000;
 
+app.use(function(req, res, next) {
+	console.log('heroku-be entry:', req.method, req.url);
+})
+
+
 app.use(bodyParser.json())
 app.use(expressDomainMiddleware)
 

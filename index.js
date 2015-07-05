@@ -11,6 +11,7 @@ var port = process.env.PORT || 3000;
 
 app.use(function(req, res, next) {
 	console.log('heroku-be entry:', req.method, req.url);
+	next()
 })
 
 app.use(bodyParser.json())
@@ -29,6 +30,7 @@ app.use(function(req, res, next){
 
 app.use(function(req, res, next) {
 	console.log('before app.get', req.method, req.url);
+	next()
 })
 
 app.get('/', function(req, res) {

@@ -1,0 +1,28 @@
+{
+  "name": "heroku-be",
+  "version": "1.0.0",
+  "description": "Common backend for all projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dankahle/heroku-be.git"
+  },
+  "author": "Dan Kahle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dankahle/heroku-be/issues"
+  },
+  "homepage": "https://github.com/dankahle/heroku-be",
+  "dependencies": {
+    "api-error-handler": "^1.0.0",
+    "body-parser": "^1.13.1",
+    "express": "^4.13.0",
+    "express-domain-middleware": "^0.1.0",
+    "lodash": "^3.10.0",
+    "mongoose": "^4.0.6",
+    "mongoose-paginate": "^3.1.5"
+  }
+}

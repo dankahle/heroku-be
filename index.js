@@ -13,7 +13,6 @@ app.use(function(req, res, next) {
 	console.log('heroku-be entry:', req.method, req.url);
 })
 
-
 app.use(bodyParser.json())
 app.use(expressDomainMiddleware)
 

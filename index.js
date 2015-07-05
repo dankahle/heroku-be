@@ -27,7 +27,12 @@ app.use(function(req, res, next){
 		next();
 })
 
+app.use(function(req, res, next) {
+	console.log('before app.get', req.method, req.url);
+})
+
 app.get('/', function(req, res) {
+	console.log('inside app.get')
 	res.send('heroku backend')
 })
 

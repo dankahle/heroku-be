@@ -22,6 +22,7 @@ function handleError(err) {
 
 
 router.get('/', function(req, res){
+	console.log('inside /user')
 	repo.getUsers(function(err, users) {
 		if(err) return handleError(err);
 		res.send(users);

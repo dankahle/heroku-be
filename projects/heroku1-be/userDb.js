@@ -24,6 +24,7 @@ var User = db.model('User', userSchema);
 
 // refresh users
 
+/*
 User.remove({}, function (err) {
 	if (err) return console.error(err);
 
@@ -32,6 +33,7 @@ User.remove({}, function (err) {
 			return console.error(err);
 	})
 })
+*/
 
 
 module.exports = User;

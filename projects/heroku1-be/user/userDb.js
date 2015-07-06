@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-	products = require('./products.json'),
+	users = require('./users.json'),
 	util = require('util')
 
 
@@ -9,29 +9,29 @@ if (process.env.NODE_ENV == 'production')
 else
 	connstr = 'mongodb://localhost:27017/db';
 
-console.log('heroku2be: mongo connected to:', process.env.NODE_ENV == 'production'? 'mongolab': 'localhost');
+console.log('heroku1-be mongo:', connstr);
 var db = mongoose.createConnection(connstr)
 db.on('error', function (err) {
-	console.error(err);
+	console.error('heroku1-be:', err);
 })
 
-var productSchema = mongoose.Schema({
+var userSchema = mongoose.Schema({
 	name: String,
-	price: Number
+	age: Number
 });
 
-var Product = db.model('heroku2be_product', productSchema);
+var User = db.model('heroku1be_user', userSchema);
 
-// refresh products
+// refresh users
 
-Product.remove({}, function (err) {
+User.remove({}, function (err) {
 	if (err) return console.error(err);
 
-	Product.create(products, function (err) {
+	User.create(users, function (err) {
 		if (err)
 			return console.error(err);
 	})
 })
 
 
-module.exports = Product;
+module.exports = User;

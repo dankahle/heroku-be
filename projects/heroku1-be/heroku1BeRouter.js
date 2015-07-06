@@ -1,5 +1,5 @@
 var express = require('express'),
-	userRouter = require('./userRouter')
+	userRouter = require('./user/userRouter')
 
 router = express.Router();
 module.exports = router;

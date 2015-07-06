@@ -3,8 +3,8 @@ var express = require('express'),
 	apiErrorHandler = require('api-error-handler'),
 	expressDomainMiddleware = require('express-domain-middleware'),
 	_ = require('lodash'),
-	heroku1BeRouter = require('./projects/heroku1-be/heroku1BeRouter'),
-	heroku2BeRouter = require('./projects/heroku2-be/heroku2BeRouter');
+	heroku1BeRouter = require('../projects/heroku1-be/heroku1BeRouter'),
+	heroku2BeRouter = require('../projects/heroku2-be/heroku2BeRouter');
 
 var app = express()
 var port = process.env.PORT || 3000;
@@ -32,8 +32,11 @@ app.get('/', function(req, res) {
 	res.send('heroku backend')
 })
 
+////////// project routers
 app.use('/heroku1-be', heroku1BeRouter);
 app.use('/heroku2-be', heroku2BeRouter);
+
+
 
 app.use(function (req, res) {
 	res.status(404).send('Oops, file not found')

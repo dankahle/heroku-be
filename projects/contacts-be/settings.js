@@ -8,7 +8,7 @@ var dbuser = process.env.dbuser,
 
 var exp = module.exports = {
 	// env vars
-	dbrefresh: process.env.dbrefresh && /\bcontacts-fe\b/.test(process.env.dbrefresh),
+	dbrefresh: process.env.dbrefresh && /\bcontacts-be\b/.test(process.env.dbrefresh),
 
 	projectName: 'contacts-be',
 	dbNamespace: 'contactsbe_',
@@ -25,6 +25,6 @@ if (production) {
 else
 	exp.connectionString = 'mongodb://localhost:27017/db';
 
-console.log('settings', exp)
+
 
 

@@ -2,15 +2,7 @@ var mongoose = require('mongoose'),
 	mongoosePaginate = require('mongoose-paginate'),
 	contacts = require('./contacts.json'),
 	util = require('util'),
-	settings = require('../settings.js')
-
-/*
-env vars:
-dbuser
-dbpassword
-dbrefresh (boolean)
- */
-
+	settings = require('../settings.js');
 
 console.log(settings.projectName + ' mongo:', settings.connectionString);
 var db = mongoose.createConnection(settings.connectionString)

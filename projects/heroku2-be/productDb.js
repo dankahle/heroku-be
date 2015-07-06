@@ -1,11 +1,11 @@
 var mongoose = require('mongoose'),
-	users = require('./users.json'),
+	products = require('./products.json'),
 	util = require('util')
 
 
 var connstr;
 if (process.env.NODE_ENV == 'production')
-	connstr = util.format('mongodb://%s:%s@ds030817.mongolab.com:30817/dankdb', process.env.dbuser, process.env.dbpassword);
+	connstr = util.format('mongodb://%s:%s@ds030817.mongolab.com:30817/dankdb', process.env.dbproduct, process.env.dbpassword);
 else
 	connstr = 'mongodb://localhost:27017/db';
 
@@ -15,23 +15,23 @@ db.on('error', function (err) {
 	console.error(err);
 })
 
-var userSchema = mongoose.Schema({
+var productSchema = mongoose.Schema({
 	name: String,
-	age: Number
+	price: Number
 });
 
-var User = db.model('heroku1be_user', userSchema);
+var Product = db.model('heroku2be_product', productSchema);
 
-// refresh users
+// refresh products
 
-User.remove({}, function (err) {
+Product.remove({}, function (err) {
 	if (err) return console.error(err);
 
-	User.create(users, function (err) {
+	Product.create(products, function (err) {
 		if (err)
 			return console.error(err);
 	})
 })
 
 
-module.exports = User;
+module.exports = Product;

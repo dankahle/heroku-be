@@ -25,4 +25,4 @@ if (production) {
 else
 	exp.connectionString = 'mongodb://localhost:27017/db';
 
-
+console.log(settings, settings);

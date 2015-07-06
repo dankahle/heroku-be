@@ -4,7 +4,8 @@ var express = require('express'),
 	expressDomainMiddleware = require('express-domain-middleware'),
 	_ = require('lodash'),
 	heroku1BeRouter = require('../projects/heroku1-be/heroku1BeRouter'),
-	heroku2BeRouter = require('../projects/heroku2-be/heroku2BeRouter');
+	heroku2BeRouter = require('../projects/heroku2-be/heroku2BeRouter'),
+	contactsBeRouter = require('../projects/contacts-be/contactsBeRouter');
 
 var app = express()
 var port = process.env.PORT || 3000;
@@ -35,6 +36,7 @@ app.get('/', function(req, res) {
 ////////// project routers
 app.use('/heroku1-be', heroku1BeRouter);
 app.use('/heroku2-be', heroku2BeRouter);
+app.use('/contacts-be', contactsBeRouter);
 
 
 

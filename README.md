@@ -7,11 +7,11 @@ Each project will have a project router that handles "/projectName" route, and s
 
 Each project creates its own connections to mongodb. There may be a limit to how many concurrent connections are allowed to mongo, if so, I may need to find a way to share between projects. 
 
-The other side of the coin are the frontends. The will run as static websites under github.io gh-pages branches. This affords free frontend serving as well :). The front and backend projecst will run independently locally, then be ported to gh-pages/heroku-be when complete for public consumption.
+The other side of the coin are the frontends. They will run as static websites under github.io gh-pages branches. This affords free frontend serving as well :). The front and backend projects will run independently locally, then be ported to gh-pages/heroku-be when complete for public consumption.
 
 #### Proof of concept
 I use 2 frontend projects: heroku1-fe, heroku2-fe
-and 2 backend projects: heroku1-be, heroku2-be to prove the concept. The frontends have a gulpfile that produces a dist directory which I --orphan branch into gh-pages. For the backends, I simply grab their src directories sans index.js and place it into heroku-be project and deploy to heroku.
+and 2 backend projects: heroku1-be, heroku2-be to prove the concept. The frontends have a gulpfile that produces a dist directory which I orphan branch into gh-pages. For the backends, I simply grab their src directories sans index.js and place it into the heroku-be project then redeploy to heroku.
 
 **frontends**  
 [heroku1-fe](https://github.com/dankahle/heroku1-fe)  

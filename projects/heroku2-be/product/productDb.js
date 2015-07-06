@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 
 var connstr;
 if (process.env.NODE_ENV == 'production')
-	connstr = util.format('mongodb://%s:%s@ds030817.mongolab.com:30817/dankdb', process.env.dbproduct, process.env.dbpassword);
+	connstr = util.format('mongodb://%s:%s@ds030817.mongolab.com:30817/dankdb', process.env.dbuser, process.env.dbpassword);
 else
 	connstr = 'mongodb://localhost:27017/db';
 

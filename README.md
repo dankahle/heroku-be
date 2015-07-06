@@ -5,7 +5,7 @@ I get one free node app from heroku and one free database from mongolab. The dea
 
 Each project will have a project router that handles "/projectName" route, and specific routers inside that for its own needs. Only thing that affects the server code is the app.use('/projectName', projectRouter) line. Everything else is encapsulated in the specific project files.
 
-Each project creates its own connections to mongodb. There may be a limit to how many concurrent connections are allowed to mongo, if so, I may need to find a way to share between projects. 
+Each project creates its own connections to mongodb. The mongo collections are namespaced by project name, to help separate them from each other. There may be a limit to how many concurrent connections are allowed to mongo, if so, I may need to find a way to share between projects. 
 
 The other side of the coin are the frontends. They will run as static websites under github.io gh-pages branches. This affords free frontend serving as well :). The front and backend projects will run independently locally, then be ported to gh-pages/heroku-be when complete for public consumption.
 

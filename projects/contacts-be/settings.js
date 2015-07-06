@@ -10,7 +10,7 @@ var exp = module.exports = {
 	// env vars
 	dbrefresh: process.env.dbrefresh && /\bcontacts-fe\b/.test(process.env.dbrefresh),
 
-	projectName: 'contacts.be',
+	projectName: 'contacts-be',
 	dbNamespace: 'contactsbe_',
 	production: production,
 	development: !production
@@ -25,4 +25,6 @@ if (production) {
 else
 	exp.connectionString = 'mongodb://localhost:27017/db';
 
-console.log(settings, settings);
+
+
+
